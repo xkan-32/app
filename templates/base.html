@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}町内会管理システム{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header>
+      <h1><a href="{{ url_for('member_list') }}">町内会管理システム</a></h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('member_list') }}">会員一覧</a></li>
+          <li><a href="{{ url_for('member_add') }}">会員追加</a></li>
+          <li><a href="{{ url_for('payment_list') }}">会費支払い一覧</a></li>
+          <li><a href="{{ url_for('payment_add') }}">会費支払い追加</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
